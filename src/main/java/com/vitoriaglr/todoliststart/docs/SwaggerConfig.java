@@ -14,7 +14,7 @@ public class SwaggerConfig {
     public OpenAPI springTodoListOpenAPI(){
         return new OpenAPI()
                 .info(new Info()
-                .title("Lista de Tarefas - Start")
+                .title("Todo Application")
                 .description("Aplicação gerenciadora de tarefas")
                 .version("1.0.0"));
     }

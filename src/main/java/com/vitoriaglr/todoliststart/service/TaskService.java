@@ -3,8 +3,6 @@ package com.vitoriaglr.todoliststart.service;
 import com.vitoriaglr.todoliststart.model.Task;
 import com.vitoriaglr.todoliststart.repository.TaskRepository;
 import lombok.AllArgsConstructor;
-import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
@@ -41,6 +39,7 @@ public class TaskService {
                         taskToUpdate.setTitle(task.getTitle());
                         taskToUpdate.setDescription(task.getDescription());
                         taskToUpdate.setDeadLine(task.getDeadLine());
+                        taskToUpdate.setFinished(task.getFinished());
                         Task updated = taskRepository.save(taskToUpdate);
                         return ResponseEntity.ok().body(updated);
                     }).orElse(ResponseEntity.notFound().build());
